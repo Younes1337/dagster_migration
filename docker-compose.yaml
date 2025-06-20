@@ -1,0 +1,49 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: dagster
+      POSTGRES_PASSWORD: dagster
+      POSTGRES_DB: dagster
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  dagit:
+    build: .
+    command: ["dagit", "-h", "0.0.0.0", "-p", "3000"]
+    environment:
+      DAGSTER_POSTGRES_HOSTNAME: postgres
+      DAGSTER_POSTGRES_DB: dagster
+      DAGSTER_POSTGRES_USER: dagster
+      DAGSTER_POSTGRES_PASSWORD: dagster
+      DAGSTER_HOME: /app/dagster_home
+    ports:
+      - "3000:3000"
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+      - ./dagster_home:/app/dagster_home
+
+  daemon:
+    build: .
+    command: ["dagster-daemon", "run"]
+    environment:
+      DAGSTER_POSTGRES_HOSTNAME: postgres
+      DAGSTER_POSTGRES_DB: dagster
+      DAGSTER_POSTGRES_USER: dagster
+      DAGSTER_POSTGRES_PASSWORD: dagster
+      DAGSTER_HOME: /app/dagster_home
+    depends_on:
+      - postgres
+    volumes:
+      - .:/app
+      - ./dagster_home:/app/dagster_home
+
+volumes:
+  postgres_data:
+  dagster_home:
