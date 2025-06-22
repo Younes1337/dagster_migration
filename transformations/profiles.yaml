@@ -1,0 +1,14 @@
+demo_profile:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: dummy_account
+      user: dummy_user
+      password: dummy_password
+      role: dummy_role
+      database: dummy_db
+      warehouse: dummy_warehouse
+      schema: public
+      threads: 1
+      client_session_keep_alive

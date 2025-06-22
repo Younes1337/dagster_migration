@@ -1,3 +1,4 @@
 pandas
 dbt-core
 dbt-snowflake
+dagster-dbt
