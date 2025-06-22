@@ -3,23 +3,23 @@ transformations:
   outputs:
     prod:
       type: snowflake
-      account: HLDPXYK-OPB52808
-      user: YOUNESS
-      password: Youness133723@
-      role: ACCOUNTADMIN
-      database: ANALYTICS
-      warehouse: COMPUTE_WH
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE') }}"
+      database: "{{ env_var('SNOWFLAKE_DATABASE') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE') }}"
       schema: BLUE_SCHEMA
       threads: 1
       client_session_keep_alive: False
     green:
       type: snowflake
-      account: HLDPXYK-OPB52808
-      user: YOUNESS
-      password: Youness133723@
-      role: ACCOUNTADMIN
-      database: ANALYTICS
-      warehouse: COMPUTE_WH
+      account: "{{ env_var('SNOWFLAKE_ACCOUNT') }}"
+      user: "{{ env_var('SNOWFLAKE_USER') }}"
+      password: "{{ env_var('SNOWFLAKE_PASSWORD') }}"
+      role: "{{ env_var('SNOWFLAKE_ROLE') }}"
+      database: "{{ env_var('SNOWFLAKE_DATABASE') }}"
+      warehouse: "{{ env_var('SNOWFLAKE_WAREHOUSE') }}"
       schema: GREEN_SCHEMA
       threads: 1
       client_session_keep_alive: False
