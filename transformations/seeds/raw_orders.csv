@@ -1,0 +1,11 @@
+order_id,customer,amount,processed
+1,Acme,100,TRUE
+2,Beta,200,TRUE
+3,Gamma,150,TRUE
+4,Delta,300,TRUE
+5,Epsilon,120,TRUE
+6,Zeta,180,TRUE
+7,Eta,210,TRUE
+8,Theta,90,TRUE
+9,Iota,250,TRUE
+10,Kappa,175,TRUE

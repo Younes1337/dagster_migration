@@ -1,0 +1,25 @@
+transformations:
+  target: prod
+  outputs:
+    prod:
+      type: snowflake
+      account: HLDPXYK-OPB52808
+      user: YOUNESS
+      password: Youness133723@
+      role: ACCOUNTADMIN
+      database: ANALYTICS
+      warehouse: COMPUTE_WH
+      schema: BLUE_SCHEMA
+      threads: 1
+      client_session_keep_alive: False
+    green:
+      type: snowflake
+      account: HLDPXYK-OPB52808
+      user: YOUNESS
+      password: Youness133723@
+      role: ACCOUNTADMIN
+      database: ANALYTICS
+      warehouse: COMPUTE_WH
+      schema: GREEN_SCHEMA
+      threads: 1
+      client_session_keep_alive: False
